@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.0.1)
+  - SwiftShip (0.0.1):
+    - Alamofire
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - SwiftShip (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftShip:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  SwiftShip: f865b308255c4af59dc4fbebf64a2150fc005a15
+
+PODFILE CHECKSUM: db70cfbb576dcc3a1471242bbc4578770826f2c6
+
+COCOAPODS: 1.0.1

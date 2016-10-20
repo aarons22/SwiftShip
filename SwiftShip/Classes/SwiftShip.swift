@@ -83,7 +83,7 @@ open class SwiftShip: NSObject {
         ]
         
         Alamofire.request("http://production.shippingapis.com/ShippingAPI.dll", parameters: parameters).response { response in
-            var parser = XMLParser(data: response.data!)
+            let parser = XMLParser(data: response.data!)
             parser.delegate = self
             
             if parser.parse() {

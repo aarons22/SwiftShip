@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.0.1)
-  - SwiftShip (0.0.1):
+  - SwiftShip (0.1.0):
     - Alamofire
 
 DEPENDENCIES:
@@ -13,8 +13,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  SwiftShip: f865b308255c4af59dc4fbebf64a2150fc005a15
+  SwiftShip: 89909726d0bf935f0b5d07381159efc34c6005c8
 
 PODFILE CHECKSUM: db70cfbb576dcc3a1471242bbc4578770826f2c6
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0

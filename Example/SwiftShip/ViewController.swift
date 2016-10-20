@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import SwiftShip
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let shipService = SwiftShip(userIdUSPS: "prodsolclient")
+        shipService.getUSPSRate(fromZip: 43023, toZip: 43551, pounds: 12, ounces: 0.3, container: .mdFlatRateBox, size: .regular) { rate, error in
+            if error != "" {
+                print("Error: \(error)")
+            } else {
+                print("Rate: \(rate)")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

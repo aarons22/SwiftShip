@@ -5,20 +5,23 @@
 [![License](https://img.shields.io/cocoapods/l/SwiftShip.svg?style=flat)](http://cocoapods.org/pods/SwiftShip)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftShip.svg?style=flat)](http://cocoapods.org/pods/SwiftShip)
 
-Making interaction with shipping API's in Swift simple. Currently only supporting US based shipping.
+A toolbelt for interacting with shipping APIs. Currently only supporting US based shipping.
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+
 ## Dependencies
-TODO
+We use the following libraries as dependencies inside of SwiftShip:
 
-- USPS
-  - [Register](https://registration.shippingapis.com/) for a USPS Web Tools user account.
-
+- [Alamofire](https://github.com/Alamofire/Alamofire), for HTTP requests
 
 ## Requirements
-TODO
+
+- iOS 9.0+
+- Xcode 8.0+
+- Swift 3.0+
+- [Register](https://registration.shippingapis.com/) for a USPS Web Tools user account.
 
 ## Installation
 
@@ -29,9 +32,64 @@ it, simply add the following line to your Podfile:
 pod "SwiftShip"
 ```
 
+## Usage
+
+### Getting a shipping rate
+
+```Swift
+let shipService = SwiftShip(userIdUSPS: "[USPS_USER_ID]")
+shipService.getUSPSRate(fromZip: 12345, toZip: 67890, pounds: 12, ounces: 0.3, container: .mdFlatRateBox, size: .regular) { rate, error in
+            if error != "" {
+                print("Error: \(error)")
+            } else {
+                print("Rate: \(rate)")
+            }
+        }
+```
+
+### USPSServiceTypes
+- priority = "Priority"
+- priorityCommercial = "Priority Commercial"
+- priorityCpp = "Priority Cpp"
+- priorityHFPCommercial = "Priority HFP Commercial"
+- priorityHFPCPP = "Priority HFP CPP"
+- priorityMailExpress = "Priority Mail Express"
+- priorityMailExpressCommercial = "Priority Mail Express Commercial"
+- priorityMailExpressCPP = "Priority Mail Express CPP"
+- priorityMailExpressSh = "Priority Mail Express Sh"
+- priorityMailExpressShCommercial = "Priority Mail Express Sh Commercial"
+- priorityMailExpressHFP = "Priority Mail Express HFP"
+- priorityMailExpressHFPCommercial = "Priority Mail Express HFP Commercial"
+- priorityMailExpressHFPCPP = "Priority Mail Express HFP CPP"
+- retailGround = "Retail Ground"
+- media = "Media"
+- library = "Library"
+- all = "All"
+- online = "Online"
+- plus = "Plus"
+
+### USPSContainerTypes
+- variable = "VARIABLE"
+- flatRateEnvelope = "FLAT RATE ENVELOPE"
+- paddedFlatRateEnvelope = "PADDED FLAT RATE ENVELOPE"
+- legalFlatRateEnvelope = "LEGAL FLAT RATE ENVELOPE"
+- smFlatRateEnvelope = "SM FLAT RATE ENVELOPE"
+- windowFlatRateEnvelope = "WINDOW FLAT RATE ENVELOPE"
+- iftCardFlatRateEnvelope = "IFT CARD FLAT RATE ENVELOPE"
+- smFlatRateBox = "SM FLAT RATE BOX"
+- mdFlatRateBox = "MD FLAT RATE BOX"
+- lgFlatRateBox = "LG FLAT RATE BOX"
+- regionalRateBoxA = "REGIONALRATEBOXA"
+- regionalRateBoxB = "REGIONALRATEBOXB"
+- rectangular = "RECTANGULAR"
+- nonRectangular = "NONRECTANGULAR"
+
+### USPSSizes
+- regular (Package dimensions are 12" or less)
+- large (Any package dimension is larger than 12")
+
 ## TODO
 
-- USPS
 - UPS
 - FedEx
 

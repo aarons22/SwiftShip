@@ -1,11 +1,14 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
 use_frameworks!
 
 target 'SwiftShip_Example' do
+    pod 'Alamofire', '~> 4.0'
+    # pod 'SWXMLHash', '~> 3.0.0'
   pod 'SwiftShip', :path => '../'
 
-  target 'SwiftShip_Tests' do
-    inherit! :search_paths
+    target 'SwiftShip_Tests' do
+        inherit! :search_paths
 
-    
-  end
+    end
 end

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftShip'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SwiftShip.'
+  s.summary          = 'A toolbelt for interacting with shipping APIs.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,25 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Make interacting with shipping APIs (USPS, UPS, FedEx) easier by provding simple methods
+  for calculating shipping rates.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/SwiftShip'
+  s.homepage         = 'https://github.com/aarons22/SwiftShip'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Aaron Sapp' => 'repo@aaron-sapp.space' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/SwiftShip.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/aarons22/SwiftShip.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/aaronsapp'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'SwiftShip/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'SwiftShip' => ['SwiftShip/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Alamofire'
 end
